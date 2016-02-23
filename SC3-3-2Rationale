@@ -1,0 +1,68 @@
+  I. Title: Need to change  "Understanding SC 3.3.2" as it does not accurately reflect what the SC says.
+  
+II. Background:
+As a screen reader user myself, I will never suggest something that will  lead to a poorer accessibility experience for PWD or AT users.
+As an accessibility auditor however, I have to go by what the  relevant guideline or standard against which content is being evaluated mandates.
+
+This note is the outcome of the discussion for "Re: Should G83: "Providing text descriptions to identify required fields that were not completed" reference 3.3.2?".
+Andrew suggested that a pull request be created in the last email of this thread: 
+
+http://lists.w3.org/Archives/Public/w3c-wai-gl/2016JanMar/0180.html
+
+My last email on that thread summarized my views:
+
+http://lists.w3.org/Archives/Public/w3c-wai-gl/2016JanMar/0179.html
+
+My interpretation of SC 3.3.2 below is made in the light of the statement, "guidelines are not testable, but provide the framework and overall objectives to help authors understand the success criteria".
+
+III. Rationale:
+
+Most of us will want to interpret "instruction" as used in SC 3.3.2 in its broadest sense to include all types of instructions , e.g. instructions that identify which field is mandatory, or specify data formats, valid data ranges, period within which a form needs to be submitted and so forth.    
+Yet, such a broad interpretation is constrained by normative WCAG 2.0: 
+- the first three words of the SC namely, "labels or instructions", and the conjunction, "or", and   
+- the word "label" as defined by WCAG2 as "text (or text equivalent) presented to a user to identify a component within Web content" 
+
+This means, that all instructions are not covered by the scope of this SC but only those that work like a label when a label is absent.
+In other words, only those instruction that help to identify the  input elements or form controls are useful to meet the SC. 
+So, consider an instruction followed by a row of 3 input fields:
+<form starts>
+Enter  first middle and last name for the first applicant in the next 3 fields: 
+<input type="text" name="fn1" id="fn1" />
+<input type="text" name="mn1" id="mn1" />
+<input type="text" name="ln1" id="ln1" />
+Enter  first middle and last name for the second applicant in the next 3 fields: 
+<input type="text" name="fn2" id="fn2" />
+<input type="text" name="mn2" id="mn2" />
+<input type="text" name="ln2" id="ln2" />
+
+...
+...
+</form ends>
+
+(Sure the above will fail SC 4.1.2 if the labels do not have an accessible name (say with a title i.e. H65), but they pass SC 3.3.2 because the instruction identifies the fields and it meets the "label or instruction" requirement.
+
+Maybe, this may not have been the intention and most will not find this palatable, but this is what the SC says today. And so does the first statement in the Understanding doc for SC 3.3.2:
+"The intent of this success criterion is to have content authors place instructions or labels that identify the controls in a form so that users know what input data is expected".
+An instruction that merely  identifies the data format or  has an asterisk or the word, "(required)" placed next to the control without any other identifiable text fails to convey "what input data is expected by the form control". 
+Such an instruction  is not what is contemplated by SC 3.3.2's current wording.
+
+Because SC 3.3.2 is part of "Guideline 3.3 Input Assistance: Help users avoid and correct mistakes", one cannot attribute more to an SC than what it actually says.
+So when the Understanding doc states, "The goal is to make certain that enough information is provided for the user to accomplish the task _without undue confusion or navigation_", it stretches what the SC mandates. 
+
+Some portion of Understanding SC 3.3.2, is really addressed by two AAA Level SCs within the same guideline:
+For SC 3.3.6: The intent of this Success Criterion is to help users with disabilities avoid consequences that may result from making a mistake when submitting form data.
+For SC 3.3.5: Context-sensitive help only needs to be provided when the label is not sufficient to describe all functionality. 
+
+Therefore, quite a bit of the content within  Understanding SC 3.3.2 including  benefits and examples need to be re-written.
+
+The above only relates to SC 3.3.2 and is not concerned with meeting SC 1.3.1 or 4.1.2 or 3.3.1 etc.  
+
+I will like the above viewpoint to be disproved  because it has been asserted that "there is room for interpretation here". If an alternative interpretation exists,  it needs to be justified with specific normative wording within WCAG 2.0 as applicable to SC 3.3.2.
+
+IV. What happens if the above viewpoint discussed under "Rationale" is accepted?  
+
+a. Understanding SC 3.3.2 will need to be re-written. 
+b. H90 will need to reference SC 1.3.1 only and not SC 3.3.2
+c. The reference to SC 3.3.2 will need to be de-linked from Technique G83 
+(Note: the email thread referenced in the background suggests that referencing 3.3.2 in G83 is also inconsistent if one compares the SC references within related techniques like G85, SCR18 or ARIA2).
+d. Consider linking SC 1.3.1 to G83, G85.
